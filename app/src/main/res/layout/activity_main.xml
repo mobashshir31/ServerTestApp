@@ -11,11 +11,33 @@
     tools:context="com.sunny.servertestapp.MainActivity">
 
     <TextView
-        android:text="TextView"
+        android:text="@string/ipInfoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/ipInfo"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp"
-        android:id="@+id/ipInfo" />
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="@string/portNumberText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/portInfo"
+        android:layout_below="@+id/ipInfo"
+        android:layout_alignLeft="@+id/ipInfo"
+        android:layout_alignStart="@+id/ipInfo" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/portInfo"
+        android:layout_marginTop="30dp">
+        <TextView
+            android:id="@+id/messageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+
+
 </RelativeLayout>

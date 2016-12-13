@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Server Test App</string>
+    <string name="portNumberText">TextView</string>
+    <string name="ipInfoText">TextView</string>
 </resources>

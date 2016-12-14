@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         ipInfo = (TextView) findViewById(R.id.ipInfo);
         messageText = (TextView) findViewById(R.id.messageText);
         ipInfo.setText(getLocalIPAddress());
+
         Thread serverThread = new Thread(new MyServerSocketRunnable());
         serverThread.start();
     }
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 dataOutputStream = new DataOutputStream(socket.getOutputStream());
                 dispMessage = "Client #" + clientNumber + " is: " + socket.getInetAddress() + ":" + socket.getPort();
                 String messageFromClient = dataInputStream.readUTF();
-                dispMessage += "\nMessage from Client: " + messageFromClient;
+                dispMessage += "\nMessage from Client: " + messageFromClient + "\n\n";
                 String replyMessage = "You are Client #" + clientNumber;
                 dataOutputStream.writeUTF(replyMessage);
 
@@ -120,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String s) {
-            messageText.setText(s);
+            messageText.append(s);
         }
     }
 
